@@ -1,4 +1,4 @@
-/** Lowercase, ASCII letters and digits joined by single dashes. */
+/** Lowercase (kept as is), ASCII letters and digits joined by single dashes. */
 export function slugify(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
