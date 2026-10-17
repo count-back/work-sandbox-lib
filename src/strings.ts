@@ -9,7 +9,7 @@ export function capitalize(s: string): string {
 }
 
 /** Convert camelCase, space- or underscore-separated text to kebab-case. */
-export function kebabCase(s: string): string {
+export function toKebab(s: string): string {
   return s
     .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
     .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
