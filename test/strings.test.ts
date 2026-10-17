@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { capitalize, slugify } from '../src/strings.js';
+import { capitalize, isBlank, slugify } from '../src/strings.js';
 
 describe('strings', () => {
   it('slugifies', () => {
@@ -9,5 +9,13 @@ describe('strings', () => {
   it('capitalizes', () => {
     expect(capitalize('abc')).toBe('Abc');
     expect(capitalize('')).toBe('');
+  });
+
+  it('detects blank strings', () => {
+    expect(isBlank('')).toBe(true);
+    expect(isBlank('   ')).toBe(true);
+    expect(isBlank('\t\n \r')).toBe(true);
+    expect(isBlank('a')).toBe(false);
+    expect(isBlank('  a  ')).toBe(false);
   });
 });

@@ -7,3 +7,8 @@ export function slugify(s: string): string {
 export function capitalize(s: string): string {
   return s ? s[0].toUpperCase() + s.slice(1) : s;
 }
+
+/** True if the string is empty or contains only whitespace. */
+export function isBlank(s: string): boolean {
+  return s.trim() === '';
+}
